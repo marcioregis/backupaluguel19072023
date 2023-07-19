@@ -19,7 +19,14 @@
 				filteredValue="#{MBImoveis.itensFiltrados}" paginator="true"
 				rows="7">
 
-				<f:facet name="header">Lista de Imoveis</f:facet>
+
+				<f:facet name="header">Lista de Imoveis
+					<h:commandLink>
+						<p:graphicImage library="images" name="excel2.png" whidth="24" />
+						<p:dataExporter type="xls" target="tbimoveis" fileName="imoveis" />
+					</h:commandLink>
+				
+				</f:facet>
 
 				// indexa por codigo e busca por codigo				
 				<p:column headerText="Codigo0" sortBy="#{item.codigo}"
@@ -49,8 +56,7 @@
 				</p:column>
 
 				// Botao do Excluir e Editar
-				<p:column headerText="Opçoes">
-					
+				<p:column headerText="Opçoes" exportable = "false">				
 					<p:commandButton icon="ui-icon-trash"
 						oncomplete="PF('dlgimoExcluir').show();"
 						update=":frmimoExcluir:pnimoExcluir">
@@ -72,10 +78,7 @@
 						oncomplete="PF('dlgimoNovo').show();"
 						update=":frmimoNovo:pnimoNovo" />
 						
-						<h:commandLink>
-							<p:graphicImage library="images" name="excel2.png" whidth="24" />
-							<p:dataExporter type="xls" target="tbimoveis" fileName="imoveis" />
-						</h:commandLink>
+	
 				</f:facet>
 							
 			</p:dataTable>

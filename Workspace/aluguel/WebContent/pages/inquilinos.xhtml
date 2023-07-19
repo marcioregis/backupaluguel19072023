@@ -20,7 +20,12 @@
 				filteredValue="#{MBInquilinos.itensFiltrados}" paginator="true"
 				rows="7">
 
-				<f:facet name="header">Lista de Inquilinos</f:facet>
+				<f:facet name="header">Lista de Inquilinos
+					<h:commandLink>
+						<p:graphicImage library="images" name="excel2.png"  />
+						<p:dataExporter type="xls" target="tbInquilinos" fileName="iquilinos" />
+					</h:commandLink>
+				</f:facet>
 				
 				<p:column headerText="Código" sortBy="#{item.codigo}"
 					filterBy="#{item.codigo}">
@@ -49,7 +54,7 @@
 				</p:column>
 				
 
-				<p:column headerText="Opções">
+				<p:column headerText="Opções" exportable = "false">
 					<p:commandButton icon="ui-icon-trash"
 						oncomplete="PF('dlginqExcluir').show();" update=":frminqExcluir:pninqExcluir">
 						<f:setPropertyActionListener value="#{item}" target="#{MBInquilinos.inquilinos}">
@@ -70,10 +75,7 @@
 						actionListener="#{MBInquilinos.prepararNovo}"
 						update=":frminqNovo:pninqNovo :msgGlobal" />
 						
-						<h:commandLink>
-							<p:graphicImage library="images" name="excel2.png"  />
-							<p:dataExporter type="xls" target="tbInquilinos" fileName="iquilinos" />
-						</h:commandLink>
+						
 
 				</f:facet>
 			</p:dataTable>

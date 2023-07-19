@@ -1,38 +1,48 @@
 package br.com.farmacia.domain;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-//import java.util.HashMap;
-import java.util.Map;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
-import br.com.farmacia.factory.ConexaoFactory;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.PageSize;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.PdfWriter;
 
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
-
-@ManagedBean(name = "MBGeraRecibo")
-@ViewScoped
 public class GeraRelatorio {
-
-	Map<String, Object> HashMap;
-	public GeraRelatorio() throws SQLException {
-		Connection conexao = ConexaoFactory.conectar();
+	
+	public static void main(String[] args) {
+		//Connection conexao = ConexaoFactory.conectar();
+		// criamos um documento vazio
+		Document documentoPDF = new Document();
+	
 		try {
+			// cria uma instancia do cocumento e da nome do pdf
+			PdfWriter.getInstance(documentoPDF, new FileOutputStream("C:\\PDF\\PDF_PROGRAMINHAS.pdf"));
+			
+			// abrir o documento
+			documentoPDF.open();
+			
+			//setar o tamanho da pagina
+			documentoPDF.setPageSize(PageSize.A4);
 		
-		JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\marcioregis\\JaspersoftWorkspace\\relatorios\\recibos.jasper");	
-		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, HashMap, conexao);
-		@SuppressWarnings("unused")
-		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
-		JasperViewer.setDefaultLookAndFeelDecorated(true);
-		
-		
-		} catch (JRException e) {
-			e.printStackTrace();
+			// adicionar primeiro paragrafo
+			documentoPDF.add(new Paragraph("GERANDO PDF COM PROGRAMINHA E VOCE"));
+			documentoPDF.add(new Paragraph("           "));
+			documentoPDF.add(new Paragraph("GERANDO PDF COM PROGRAMINHA E VOCE"));
+			documentoPDF.add(new Paragraph("GERANDO PDF COM PROGRAMINHA E VOCE"));
+			documentoPDF.add(new Paragraph("GERANDO PDF COM PROGRAMINHA E VOCE"));
+			documentoPDF.add(new Paragraph("GERANDO PDF COM PROGRAMINHA E VOCE"));
+			
+			//nova pagina
+			documentoPDF.newPage();
+			documentoPDF.add(new Paragraph("NOVA PAGINA PROGRAMINHA E VOCE"));
+			
+		}catch(DocumentException de) {
+			de.printStackTrace();
+		}catch(IOException ioe) {
+			ioe.printStackTrace();
+		}finally {
+			documentoPDF.close();
 		}
 		
 	}
