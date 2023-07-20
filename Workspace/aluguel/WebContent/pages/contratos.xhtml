@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"	
+	>
+	<h:form>
+		<div class="card">
+		<div class="flex justify-content-between">
+ 		</div>
+		
+    	<p:dataTable id="tbInquilinos"  var="item" value="#{MBInquilinos.itens}">
+			<p:column>
+	          	<div class="flex justify-content-between align-items-center">
+                	<font size="5" ><strong>CONTRATO DE LOCACAO DE IMOVEL</strong> </font><br/>
+                	------------------------------------------------------------------------------------            	
+                </div>
+  		
+  				<h:outputLabel value="Pelo presente instrumento particular de locação de imóvel residencial, de uma lado:" /><br/><br/> 				
+   				<h:outputLabel value="NOME COMPLETO DO PROPIETARIO, Nacionalidade,Estado Civil, Profissao"  /><br/>
+   				<h:outputText value="RG, CPF, Residente e domicilio na Rua, Bairro, Cidade, Uf, Cep"  /><br/>
+   				<h:outputText value="Celular, email, neste ato denominado LOCADOR,"  /><br/><br/>
+ 				<h:outputLabel value="e de outro lado" /><br/><br/>
+
+   				<h:outputText value="#{item.nomeinq}"  />
+   				<h:outputLabel value=",Brasileiro, Casado, "/> 
+   				<h:outputText value="#{item.profissao}"/>
+   				<h:outputLabel value=", "/>   				
+   				<h:outputLabel value="Portador do RG:" />
+   				<h:outputText value="#{item.rg}"/>
+   				<h:outputLabel value=", "/> 
+   				<h:outputLabel value="inscrito no CPF:" />
+   				<h:outputText value="#{item.cpf}"/><br/>
+   				<h:outputLabel value="celular " />
+   				<h:outputText value="#{item.celular}"/>
+   				<h:outputLabel value=", "/> 
+   				<h:outputLabel value="email "  />
+   				<h:outputText value="#{item.email}"/><br/><br/><br/>
+   				<h:outputLabel value="As partes acima identificadas ajustam e acordam o presente CONTRATO    DE  "  /><br/>
+   				<h:outputLabel value="LOCALÇÃO de imóvel residencial, que será regido pela lei n 8.245/91  (lei  "  /><br/>
+  				<h:outputLabel value="do Inquilino), em relação ao imóvel abaixo identificado, que o LOCADOR se,"  /><br/>
+  				<h:outputLabel value="declara, sob as penas da lei, proprietário ou autorizado a gerir os frutos "  /><br/>
+  				<h:outputLabel value="decorrentes da localção, de acordo com as cláusulas e condições seguintes:"  /><br/><br/>
+  
+ 				<h:outputLabel value="1ª. OBJETO – O objeto do presente contrato é a locação de natureza residencial do"/><br/>
+				<h:outputLabel value="imóvel situado na: (descrição completa do endereço do imóvel; nome da rua, número,"/><br/>
+				<h:outputLabel value="bairro, CEP, cidade, estado), registrado sob a Matrícula de Imóvel n.º xxxxxxxxxx,"/><br/>
+ 				<h:outputLabel value="o qual se encontra livre de quaisquer ônus e dívidas."/><br/><br/>
+ 
+  				<h:outputLabel value="Parágrafo único – O imóvel foi devidamente vistoriado e entregue na data da assinatura"/><br/>
+				<h:outputLabel value="deste contrato, pelo LOCADOR ao LOCATÁRIO, que declara recebê-lo em perfeitas condições"/><br/>
+				<h:outputLabel value="de habitabilidade, instalações elétricas, hidráulicas e sanitárias, e com pintura nova,"/><br/>
+				<h:outputLabel value="prometendo assim devolvê-lo."/><br/><br/>			
+  				
+  				<h:outputLabel value="2ª. PRAZO – A presente locação terá o prazo de 30 (trinta) meses, a iniciar-se no dia"/><br/>
+  				<h:outputLabel value=" 00/00/0000 e com previsão de término no dia 00/00/0000. "/><br/>
+ 
+   				<h:outputLabel value="Parágrafo único – Prorrogação. O contrato poderá ser prorrogado por convenção"/><br/>
+				<h:outputLabel value="entre as partes ou se o LOCATÁRIO continuar residindo no imóvel após o fim do"/><br/>
+				<h:outputLabel value="prazo, por mais de 30 (trinta) dias, sem objeção do LOCADOR, sendo que neste "/><br/>
+				<h:outputLabel value="caso a locação será prorrogada por tempo indeterminado, podendo o LOCADOR"/><br/>
+				<h:outputLabel value="reivindicar o imóvel a qualquer tempo, mediante notificação expressa e "/><br/>
+				<h:outputLabel value="concedendo ao LOCATÁRIO o prazo de 30 (trinta) dias para a desocupação do imóvel."/><br/><br/>
+	
+				<h:outputLabel value="3ª. VALOR DO ALUGUEL – O valor do aluguel é de R$ 000,00 (descrever valor"/><br/>
+				<h:outputLabel value="por extenso em reais) mensais, devendo o pagamento ser feito até o (dia de"/><br/>
+				<h:outputLabel value="sua preferência) dia útil de cada mês, a ser efetuado diretamente ao LOCADOR,"/><br/>
+				<h:outputLabel value="por meio de (informar se será pix, boleto, entrega em mãos, etc, da forma mais"/><br/>
+				<h:outputLabel value="detalhada possível)."/><br/><br/>			
+	
+				<h:outputLabel value="Parágrafo 1º – Recibo. O LOCADOR deverá emitir recibo ao LOCATÁRIO referente"/><br/>
+				<h:outputLabel value="à quantia paga, descrevendo o valor e o mês que está sendo pago, além de"/><br/>
+				<h:outputLabel value="qualquer outra eventual despesa."/><br/><br/>
+
+				<h:outputLabel value="Parágrafo 2º – Reajuste. O valor do aluguel será reajustado anualmente, tendo"/><br/>
+				<h:outputLabel value="como base de correção monetária o índice do (insira aqui o índice que deseja;"/><br/>
+				<h:outputLabel value="por exemplo: IGPM, IGP, IPC)."/><br/><br/>
+
+				<h:outputLabel value="Parágrafo 3º – Despesas e tributos. Além do pagamento do aluguel, obriga-se o"/><br/>
+				<h:outputLabel value="LOCATÁRIO a realizar o pagamento de todas as despesas ordinárias (água, energia"/><br/>
+				<h:outputLabel value="elétrica, gás, telefone, internet, condomínio, bem como tributos, taxas municipais"/><br/>
+				<h:outputLabel value="e IPTU) quando dos respectivos vencimentos."/><br/>
+
+				<h:outputLabel value="4ª. GARANTIA – Fica acordado que o presente contrato será garantido por meio de:"/><br/>
+				<h:outputLabel value="(descrever se será caução ou fiança; no caso de caução o locatário deixa como "/><br/>
+				<h:outputLabel value="garantia o valor de (....), que será pago juntamente com o 1º (primeiro) mês de"/><br/>
+				<h:outputLabel value="aluguel; se for fiança, inserir os dados do fiador: nome, nacionalidade, estado"/><br/>
+				<h:outputLabel value="civil, profissão, RG, CPF, endereço, celular, e-mail)."/><br/><br/>
+				
+				<h:outputLabel value="5ª. PAGAMENTO – Caso o pagamento ocorra até o dia X, será concedido a  título  de"/><br/>
+				<h:outputLabel value="incentivo de pontualidade, redução de X reais no valor do aluguel mensal pactuado."/><br/>
+				<h:outputLabel value="No entanto, caso o pagamento ocorra após o dia X, o LOCATÁRIO perde tal benefício"/><br/>
+				<h:outputLabel value="e terá o valor total acrescido de multa, juros e correção monetária, nos moldes a"/><br/>
+				<h:outputLabel value="seguir descritos."/><br/><br/> 	          
+   
+   				<h:outputLabel value="Parágrafo Único – A multa será de 2% (dois por cento) sobre o valor do aluguel e os"/><br/>
+				<h:outputLabel value="juros serão de 1% (um por cento) ao mês, acrescidos de correção monetária segundo o"/><br/>
+				<h:outputLabel value="índice do INPC (ou outro de sua preferência), até a regularização do pagamento."/><br/><br/>
+				
+				<h:outputLabel value="6ª. UTILIZAÇÃO DO IMÓVEL – A presente locação destina-se restritivamente ao"/><br/>
+				<h:outputLabel value="uso do imóvel para fins residenciais, não podendo o LOCATÁRIO transferir,"/><br/>
+				<h:outputLabel value="sublocar, ceder ou emprestar ou usá-lo de forma diferente do previsto, salvo "/><br/>
+				<h:outputLabel value="autorização expressa do LOCADOR, sob pena haver seu contrato rescindido de"/><br/>
+				<h:outputLabel value="plano, sem gerar direito a indenização."/><br/><br/>
+	
+				<h:outputLabel value="Parágrafo 1º – Benfeitorias. O LOCATÁRIO obriga-se a não fazer instalação, adaptação,"/><br/>
+				<h:outputLabel value="obra ou benfeitoria, sem prévia obtenção de autorização expressa do LOCADOR, caso"/><br/>
+				<h:outputLabel value="contrário ficará sujeito ao aceite ou não do LOCADOR, sendo que em caso de não aceitação,"/><br/>
+				<h:outputLabel value="o LOCATÁRIO obriga-se a devolver o imóvel da mesma forma que o recebeu. Ademais, quaisquer"/><br/>
+				<h:outputLabel value="benfeitorias, consertos ou reparos farão parte integrante do imóvel, não possuindo o"/><br/>
+				<h:outputLabel value="LOCATÁRIO o direito de retenção ou indenização."/><br/><br/>
+				
+				<h:outputLabel value="Parágrafo 2º – Seguro. O LOCATÁRIO obriga-se a providenciar seguro do imóvel"/><br/>
+				<h:outputLabel value="locado, em companhia idônea, prevendo riscos de incêndio, raio, explosão etc.,"/><br/>
+				<h:outputLabel value="o qual servirá para pagamento da restauração em caso de sinistro. A apólice "/><br/>
+				<h:outputLabel value="deverá ser apresentada anualmente, e a primeira no prazo de 30 (trinta) dias "/><br/>
+				<h:outputLabel value="após a assinatura deste contrato."/><br/><br/>
+	
+				<h:outputLabel value="Parágrafo 3º – Culpa ou Dolo. Caso porventura venha a ocorrer acidente no imóvel"/><br/> 
+				<h:outputLabel value="por culpa ou dolo do LOCATÁRIO, este ficará obrigado a pagar todas as despesas"/><br/> 
+				<h:outputLabel value="pelos danos causados, além de multa no valor de x% (x por cento) sobre o valor"/><br/> 
+				<h:outputLabel value="do aluguel."/><br/><br/>
+				
+				<h:outputLabel value="Parágrafo 4º – Vistorias. Faculta ao LOCADOR realizar vistorias esporádicas no"/><br/> 
+				<h:outputLabel value="imóvel, em dia e hora a serem combinados, a fim de averiguar o estado de"/><br/> 
+				<h:outputLabel value="conservação do imóvel, sendo que se algum vício ou dano for constatado, o"/><br/> 
+				<h:outputLabel value="LOCATÁRIO deverá providenciar o conserto, no prazo de 60 (sessenta) dias, sob"/><br/> 
+				<h:outputLabel value="pena de rescisão contratual."/><br/><br/>
+				
+				<h:outputLabel value="Parágrafo 5º – Devolução. Finda ou rescindida a locação, o LOCATÁRIO obriga-se"/><br/> 
+				<h:outputLabel value="a devolver o imóvel nas mesmas condições em que o recebeu, arcando com as despesas"/><br/> 
+				<h:outputLabel value="cabíveis (conservação de portas, fechaduras, trincos, puxadores, vidraçarias e"/><br/> 
+				<h:outputLabel value="instalações elétricas, hidráulicas e sanitárias), inclusive obrigando-se a pintá-lo"/><br/> 
+				<h:outputLabel value="nas mesmas tintas e cores (citar marca de tinta se preferir). Após vistoria do local"/><br/>
+				<h:outputLabel value="por parte do LOCADOR, e estando tudo nos conformes, a devolução irá se concretizar"/><br/> 
+				<h:outputLabel value="mediante a entrega das chaves e assinatura de um Termo de Entrega por ambas as partes."/><br/><br/>
+				
+				<h:outputLabel value="7ª. RESCISÃO CONTRATUAL. Poderá o contrato ser rescindido mediante prévio"/><br/> 
+				<h:outputLabel value="acordo entre as partes ou na ocorrência das situações acima pactuadas, bem"/><br/> 
+				<h:outputLabel value="como por quaisquer das outras hipóteses previstas na Lei do Inquilinato."/><br/><br/>
+	
+				<h:outputLabel value="8ª. CLÁUSULA PENAL. O LOCADOR e o LOCATÁRIO obrigam-se a mutuamente"/><br/>
+				<h:outputLabel value="a respeitar este contrato em todas suas cláusulas, sob pena de incorrer"/><br/>
+				<h:outputLabel value="no pagamento de multa no valor de X reais/aluguéis, além do ressarcimento"/><br/> 
+				<h:outputLabel value="por quaisquer danos causados."/><br/><br/>
+				
+				<h:outputLabel value="Parágrafo único – Devolução antecipada. Caso ocorra a devolução do imóvel antes"/><br/> 
+				<h:outputLabel value="do prazo de término previsto neste contrato, seja pela entrega voluntária ou por"/><br/>
+				<h:outputLabel value="decisão judicial em decorrência de falta de pagamento ou outra infração qualquer,"/><br/> 
+				<h:outputLabel value="facultará ao LOCADOR cobrar do LOCATÁRIO o pagamento de multa compensatória no"/><br/> 
+				<h:outputLabel value="valor de X reais/aluguéis, proporcionalmente ao tempo de contrato não cumprido,"/><br/> 
+				<h:outputLabel value="na base de 1/24 para cada mês transcorrido."/><br/><br/>				 	
+				
+				<h:outputLabel value="9ª. DISPOSIÇÕES FINAIS. Não será facultativo a nenhuma das partes o direito de"/><br/> 
+				<h:outputLabel value="arrependimento, devendo ambas as partes cumprir fielmente o disposto nas"/><br/> 
+				<h:outputLabel value="cláusulas aqui avençadas."/><br/><br/>
+				
+				<h:outputLabel value="Parágrafo 1º – Omissão. Caso venha a ocorrer alguma hipótese não prevista neste"/><br/> 
+				<h:outputLabel value="contrato, a omissão será suprida pela Lei nº 8.245/91 ( Lei do Inquilinato)."/><br/><br/>
+
+				<h:outputLabel value="Parágrafo 2º – Foro. Elegem a Comarca de (cidade), (Estado) como foro para dirimir"/><br/> 
+				<h:outputLabel value="quaisquer problemas, desistindo de qualquer outro, por mais privilegiado que seja ou possa ser."/><br/><br/>
+				
+				<h:outputLabel value="E assim, por estarem justos a e acordados, firmam o presente CONTRATO DE LOCAÇÃO,"/><br/> 
+				<h:outputLabel value="em 2 (duas) vias de igual forma e teor, na presença de 2 (duas) testemunhas, para"/><br/> 
+				<h:outputLabel value="que produza todos os seus jurídicos e legais efeitos."/><br/><br/>
+				 
+				<h:outputLabel value="Cidade/Estado, (dia) de (mês) de (ano)."/><br/>
+				<h:outputLabel value="(NOME DO LOCADOR)"/><br/>
+				<h:outputLabel value="LOCADOR"/><br/>
+				<h:outputLabel value="(NOME DO LOCATÁRIO)"/><br/>
+				<h:outputLabel value="LOCATÁRIO"/><br/>
+				<h:outputLabel value="Testemunhas:"/><br/>
+				<h:outputLabel value="(NOME DA TESTEMUNHA 1)"/><br/>
+				<h:outputLabel value="RG: 00.000.000-0 –(sigla)/(Estado)"/><br/>
+				<h:outputLabel value="CPF: 000.000.000-00"/><br/>
+				<h:outputLabel value="(NOME DA TESTEMUNHA 2)"/><br/>
+				<h:outputLabel value="RG: 00.000.000-0 –(sigla)/(Estado)"/><br/><br/>
+				<h:outputLabel value=" "/> <br/><br/><br/><br/><br/><br/>
+				<h:outputLabel value=" "/> <br/><br/><br/><br/><br/><br/>
+				<h:outputLabel value=" "/> <br/><br/><br/><br/><br/>
+				          
+        </p:column>
+        
+    </p:dataTable>
+    <h:commandButton value="Imprimir" actionListener="#{MBGeraRelatorio}" >  
+    </h:commandButton>       
+</div>
+</h:form>
+
+</ui:composition>
